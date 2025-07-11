@@ -1,23 +1,41 @@
-import type { AxisModel } from "@syncfusion/ej2-react-charts";
+// import type { AxisModel } from "@syncfusion/ej2-react-charts";
 
 export const sidebarItems = [
   {
     id: 1,
-    icon: "/assets/icons/home.svg",
-    label: "Dashboard",
+    icon: "/assets/icons/home (1).svg",
+    label: "Tableau de bord",
     href: "/dashboard",
   },
   {
     id: 3,
     icon: "/assets/icons/users.svg",
-    label: "All Users",
-    href: "/all-users",
+    label: "Candidats",
+    href: "/candidat",
   },
   {
     id: 4,
-    icon: "/assets/icons/itinerary.svg",
-    label: "AI Trips",
-    href: "/trips",
+    icon: "/assets/icons/analysis.svg",
+    label: "Analyses",
+    href: "/Analyse",
+  },
+  {
+    id: 5,
+    icon: "/assets/icons/job.svg",
+    label: "Postes",
+    href: "/post",
+  },
+  {
+    id: 6,
+    icon: "/assets/icons/mail.svg",
+    label: "Mail",
+    href: "/Mail",
+  },
+  {
+    id: 7,
+    icon: "/assets/icons/new-job.svg",
+    label: "Offre",
+    href: "/Offre",
   },
 ];
 
@@ -101,26 +119,26 @@ export const comboBoxItems = {
   budget: budgetOptions,
 } as Record<keyof TripFormData, string[]>;
 
-export const userXAxis: AxisModel = { valueType: "Category", title: "Day" };
-export const useryAxis: AxisModel = {
-  minimum: 0,
-  maximum: 10,
-  interval: 2,
-  title: "Count",
-};
+// export const userXAxis: AxisModel = { valueType: "Category", title: "Day" };
+// export const useryAxis: AxisModel = {
+//   minimum: 0,
+//   maximum: 10,
+//   interval: 2,
+//   title: "Count",
+// };
 
-export const tripXAxis: AxisModel = {
-  valueType: "Category",
-  title: "Travel Styles",
-  majorGridLines: { width: 0 },
-};
+// export const tripXAxis: AxisModel = {
+//   valueType: "Category",
+//   title: "Travel Styles",
+//   majorGridLines: { width: 0 },
+// };
 
-export const tripyAxis: AxisModel = {
-  minimum: 0,
-  maximum: 10,
-  interval: 2,
-  title: "Count",
-};
+// export const tripyAxis: AxisModel = {
+//   minimum: 0,
+//   maximum: 10,
+//   interval: 2,
+//   title: "Count",
+// };
 
 export const CONFETTI_SETTINGS = {
   particleCount: 200, // Number of confetti pieces
