@@ -57,16 +57,21 @@ const MobileSidebar = () => {
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-      <Box component="div" className="mobile-sidebar wrapper relative">
+      <Box
+        component="div"
+        className="lg:hidden flex flex-col gap-5 border-b border-[#D9D9D9] w-full max-w-7xl mx-auto px-4 lg:px-8  relative"
+      >
         <Box component="div">
-          <header>
-            <Link to="/">
+          <header className="flex justify-between items-center">
+            <Link to="/" className="flex items-center gap-1.5 py-4">
               <img
                 src="assets/icons/logo2.svg"
                 alt="logo"
                 className="size-[30px]"
               />
-              <h1>Talvisio</h1>
+              <h1 className="text-base md:text-[14px] font-bold text-dark-100">
+                Talvisio
+              </h1>
             </Link>
             <button onClick={handleClick}>
               <img

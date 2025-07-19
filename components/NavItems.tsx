@@ -1,4 +1,6 @@
+import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { Box } from "@mui/material";
+import { useState } from "react";
 import BoutonMenu from "./BoutonMenu";
 import SearchBar from "./SearchBar";
 
@@ -13,26 +15,59 @@ export default function NavItems({
     logo: "/assets/icons/logo2.svg",
   };
 
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
   return (
-    <Box component="section" className="nav-items" onClick={handleClick}>
-      <div className="nav-header">
-        <div className="header">
-          <img src={user?.logo} alt={user?.name} className="size-[30px]" />
-          <article>
-            <h2>{user?.name}</h2>
-            <p>{user?.Email}</p>
+    <Box
+      component="section"
+      className="flex flex-col gap-[2px] h-full"
+      onClick={handleClick}
+    >
+      <div className="flex items-center justify-between gap-2.5 pb-4">
+        <div className="flex flex-row items-center  gap-2.5">
+          <img
+            src={user?.logo}
+            alt={user?.name}
+            className="aspect-square size-[30px]"
+          />
+          <article className="flex flex-col justify-between !gap-[2px] max-w-full">
+            <h2 className="text-xs md:text-[14px] font-bold text-dark-200 truncate">
+              {user?.name}
+            </h2>
+            <p className="text-gray-500 text-xs md:text-[12px] font-normal truncate">
+              {user?.Email}
+            </p>
           </article>
         </div>
-        <img
-          src="/assets/icons/arrow-down.svg"
-          alt=""
-          className=" size-4 cursor-pointer"
-        />
+        <button onClick={handleOpen}>
+          <img
+            src="/assets/icons/arrow-down.svg"
+            alt=""
+            className=" size-4 cursor-pointer"
+          />
+        </button>
       </div>
-      <hr />
-      <Box component="div" className="container pt-4">
-        <SearchBar />
-        <BoutonMenu />
+      <hr className="bg-[#D9D9D9] size-[1.5px] border border-none w-full" />
+      <Box
+        component="div"
+        className="flex flex-col justify-between gap-1 h-full pt-4"
+      >
+        <Box component="div" className="w-full flex flex-col">
+          <SearchBar />
+          <BoutonMenu />
+        </Box>
+        <footer className="border w-full py-2 px-6 rounded-md bg-black flex justify-between items-center gap-2 cursor-pointer">
+          <h2 className="text-[14px] font-semibold text-white">
+            Se déconnecter
+          </h2>
+          <button className="text-white">
+            <LogoutOutlinedIcon />
+          </button>
+        </footer>
       </Box>
     </Box>
   );
