@@ -1,8 +1,9 @@
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+import { MdLogout } from "react-icons/md";
 import { Box } from "@mui/material";
 import { useState } from "react";
 import BoutonMenu from "./BoutonMenu";
 import SearchBar from "./SearchBar";
+import AnimationMenuBar from "./AnimationBar";
 
 export default function NavItems({
   handleClick,
@@ -27,8 +28,8 @@ export default function NavItems({
       className="flex flex-col gap-[2px] h-full"
       onClick={handleClick}
     >
-      <div className="flex items-center justify-between gap-2.5 pb-4">
-        <div className="flex flex-row items-center  gap-2.5">
+        <AnimationMenuBar>
+        <div className="flex flex-row items-center gap-2.5">
           <img
             src={user?.logo}
             alt={user?.name}
@@ -43,14 +44,7 @@ export default function NavItems({
             </p>
           </article>
         </div>
-        <button onClick={handleOpen}>
-          <img
-            src="/assets/icons/arrow-down.svg"
-            alt=""
-            className=" size-4 cursor-pointer"
-          />
-        </button>
-      </div>
+        </AnimationMenuBar>
       <hr className="bg-[#D9D9D9] size-[1.5px] border border-none w-full" />
       <Box
         component="div"
@@ -60,12 +54,12 @@ export default function NavItems({
           <SearchBar />
           <BoutonMenu />
         </Box>
-        <footer className="border w-full py-2 px-6 rounded-md bg-black flex justify-between items-center gap-2 cursor-pointer">
+        <footer className="border w-full py-2 px-6 rounded-md bg-[#586090] flex justify-between items-center gap-2 cursor-pointer">
           <h2 className="text-[14px] font-semibold text-white">
             Se déconnecter
           </h2>
           <button className="text-white">
-            <LogoutOutlinedIcon />
+            <MdLogout />
           </button>
         </footer>
       </Box>

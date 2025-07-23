@@ -1,4 +1,4 @@
-import SearchIcon from "@mui/icons-material/Search";
+import { FaSearch } from "react-icons/fa";
 import { Box } from "@mui/material";
 
 const SearchBar = () => {
@@ -15,12 +15,7 @@ const SearchBar = () => {
       }}
       className="flex items-center w-full gap-2.5 justify-content-between relative shadow-md cursor-pointer"
     >
-      <SearchIcon
-        fontSize="small"
-        sx={{
-          color: "#75767C",
-        }}
-      />
+      <FaSearch className=" text-[#75767C] size-4"/>
       <h3 className=" text-xs lg:text-[12px] text-[#75767C]">Search</h3>
       <Box
         component="div"

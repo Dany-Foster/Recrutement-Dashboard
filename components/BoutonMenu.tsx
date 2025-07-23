@@ -12,9 +12,9 @@ const BoutonMenu = () => {
             <Box
               component="div"
               className={cn(
-                "group flex items-center text-xs md:text-[14px] font-semibold cursor-pointer gap-2.5 py-[10px] px-3 rounded-lg text-dark-200 hover:bg-black hover:text-white hover:shadow-md",
+                "group flex items-center text-xs md:text-[14px] font-semibold cursor-pointer gap-2.5 py-[10px] px-3 rounded-lg text-[#586090] hover:bg-[#586090] hover:text-white hover:shadow-lg",
                 {
-                  "bg-black !text-white shadow-lg": isActive,
+                  "bg-[#586090] !text-white shadow-lg": isActive,
                 }
               )}
             >
