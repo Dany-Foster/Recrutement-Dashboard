@@ -9,7 +9,9 @@ import { GiDiploma } from "react-icons/gi";
 import { PiReadCvLogoFill } from "react-icons/pi";
 import RecrutmentChart from "components/ChartReact";
 import CandidatChart from "components/RadialChart";
-import { DataTable, ScrollContent } from "components";
+import { DataTable, ScrollContent, ToggleButtons } from "components";
+import { NavLink } from "react-router";
+import { Input } from '@base-ui-components/react/input';
 
 const dashboard = () => {
   return (
@@ -24,7 +26,7 @@ export function Container(){
     <ScrollContent>
       <Box
         component="div"
-        className="flex flex-col gap-2 px-4 sm:px-2 lg:px-4 pt-4 w-full mb-2"
+        className="flex flex-col gap-2 px-4 sm:px-2 lg:px-4 pt-4 w-full mb-2 "
       >
         <Box component="div" className="">
           <h3 className="text-[18px] font-bold ">TABLEAU DE BORD</h3>
@@ -136,8 +138,8 @@ export function Container(){
         </Box>
         <Box component="div" className="w-full mt-4 flex flex-col">
           <Box component="main" className="w-full lg:px-4 mt-4">
-            <Paper elevation={3} className="w-full bg-white">
-              <Box component="div" className="flex flex-col gap-4 p-4">
+            <Paper elevation={2} className="w-full bg-white">
+              <Box component="div" className="flex flex-col justify-arround gap-4 p-4">
                 <Box component="div" className="">
                   <h3 className="text-[18px] font-bold ">Liste des candidats</h3>
                   <p className="text-[14px] font-normal text-[#75767C]">
@@ -145,6 +147,25 @@ export function Container(){
                     leurs offres d'emploi.
                   </p>
                 </Box>
+                <div className="w-full flex items-center justify-between ">
+                  <ToggleButtons/>
+                  <div className="flex items-center gap-2 ">
+                    <Paper elevation={0} className="w-[300px] bg-[#F5F7F9] px-4 py-2  rounded-md border-1 border-[#75767C]">
+                      <Input
+                        type="text"
+                        placeholder="Rechercher un candidat"
+                        className="w-full outline-none text-[14px] text-[#000]  placeholder:text-[14px]"
+                        value=""
+                      />
+                    </Paper>
+                    <NavLink
+                      to="/admin/candidatures"
+                      className="text-[12px] m-auto font-bold border-1 bg-white border-[#3E3A7C] text-[#3E3A7C] px-4 py-2 rounded-md hover:bg-[#3E3A7C] hover:text-[#F5F7F9] flex items-center gap-2"
+                    >
+                       Ajouter un candidat
+                    </NavLink>
+                  </div>
+                </div>
                 {/* Here you can add a table or list to display candidates
                 <p className="text-[14px] text-gray-600">Aucune candidature trouvée.</p> */}
                 {/* Placeholder for candidates list */}

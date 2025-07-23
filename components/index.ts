@@ -10,3 +10,4 @@ export { default as ChartReact } from "./ChartReact";
 export { default as CandidatChart } from "./RadialChart";
 export { default as ScrollContent } from "./ScrollContent";
 export { default as DataTable } from "./Tableau";
+export {default as ToggleButtons} from "./ButtonsGroup";
